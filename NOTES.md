@@ -47,18 +47,6 @@ dokku apps:create bpc-rails-demo
 dokku postgres:create bpc_rails_demo_production
 ```
 
-3. Link the postgres service to the app:
-```
-# on the Dokku host
-dokku postgres:link bpc_rails_demo_production bpc-rails-demo
-```
-
-4. Add a different domain (default is bpc-rails-demo.billclaytor.com):
-```
-# on the Dokku host
-dokku domains:add bpc-rails-demo demo.billclaytor.com
-```
-
 ##### Set up the local environment and push to Dokku
 
 Note: These steps assume that SSH has been configured for the Dokku production environment. 
