@@ -16,6 +16,11 @@ rails new bpc-rails-demo -d=postgresql
 rails db:create
 ```
 
+4. Add linux platform:
+```
+bundle lock --add-platform x86_64-linux
+```
+
 ### Dokku
 
 ##### Set up the Dokku host
