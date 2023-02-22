@@ -1,0 +1,42 @@
+#################################################################
+# default
+#################################################################
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see Rails configuration guide
+  # https://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+#################################################################
+# development
+#################################################################
+development:
+  <<: *default
+  database: bpc_rails_demo_development
+
+  # Connect on a TCP socket
+  host: db
+  username: postgres
+  password: password
+
+#################################################################
+# test
+#################################################################
+test:
+  <<: *default
+  database: bpc_rails_demo_test
+
+  # Connect on a TCP socket
+  host: db
+  username: postgres
+  password: password
+
+#################################################################
+# production
+#################################################################
+production:
+  <<: *default
+  database: bpc_rails_demo_production
+  username: bpc_rails_demo
+  password: <%= ENV["BPC_RAILS_DEMO_DATABASE_PASSWORD"] %>
