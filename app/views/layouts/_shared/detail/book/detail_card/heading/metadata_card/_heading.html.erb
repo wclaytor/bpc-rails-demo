@@ -1,0 +1,21 @@
+<h3 class="card-title"><%= book.title %></h3>
+
+<h5>by <%= link_to book.author.name, book.author %></h5>
+
+<p class="card-text" id="summary"></p>
+
+<p class="card-text" id="db">
+
+  <small class="text-muted">
+    Created: <%= book.created_at.strftime("%Y %m %d") %>
+  </small>
+
+  <br>
+
+  <small class="text-muted">
+    Last updated: <%= book.updated_at.strftime("%Y %m %d") %>
+  </small>
+  
+</p>
+
+

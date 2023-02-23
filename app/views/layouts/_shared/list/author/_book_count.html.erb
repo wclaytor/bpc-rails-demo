@@ -1,0 +1,5 @@
+<% book_count = Book.where(:author_id => author.id).count %>
+
+<span class="badge badge-secondary badge-pill" id="badge">
+  <%= book_count %>
+</span>

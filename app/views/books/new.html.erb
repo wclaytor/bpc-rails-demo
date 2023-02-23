@@ -1,9 +1,17 @@
-<h1>New book</h1>
+<div class="card">
 
-<%= render "form", book: @book %>
+  <div class="card-body">
 
-<br>
+    <h3>New Book</h3>
 
-<div>
-  <%= link_to "Back to books", books_path %>
+    <%= render "form", book: @book %>
+
+    <br>
+
+    <div>
+      <%= link_to "Cancel", @book %>
+    </div>
+
+  </div>
+
 </div>

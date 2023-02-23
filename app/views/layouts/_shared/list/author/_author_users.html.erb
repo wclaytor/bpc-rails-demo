@@ -1,0 +1,31 @@
+<% author_user = nil %>
+<% author_users = nil %>
+
+<span id="author_users">
+
+  <% if author_user == nil || author_user.liked != true %>
+
+    <span class="px-2" id="liked">
+      <i class="fa fa-heart-o" aria-hidden="true"></i>
+    </span>
+
+  <% else %>
+
+    <span class="px-2" id="liked">
+      <i class="fa fa-heart" aria-hidden="true"></i>
+    </span>
+
+  <% end %>
+
+  <% if author_users == nil %>
+
+    <span class="badge badge-primary badge-pill" id="badge">0</span>
+
+  <% else %>
+  
+    <% liked_count = 777 %>
+    <span class="badge badge-secondary badge-pill" id="badge"><%= liked_count %></span>
+
+  <% end %>
+
+</span>
