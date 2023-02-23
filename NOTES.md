@@ -93,3 +93,21 @@ After adding the gems and running bundle install, generate the config and todo:
 ```
 rubocop --auto-gen-config
 ```
+
+##
+
+## 3-add-author-and-book-entities
+
+1. Generate the scaffolds
+
+```
+rails g scaffold Author name:string bio:text
+rails g scaffold Book title:string summary:text publication_year:integer author:references
+```
+
+2. Update the migrations (see commit)
+
+3. Run the migrations:
+```
+rails db:migrate
+```
