@@ -82,3 +82,14 @@ dokku run bpc-rails-demo bundle exec rake db:migrate db:seed RAILS_ENV=productio
 # on the Dokku host
 dokku domains:add bpc-rails-demo demo.billclaytor.com
 ```
+
+##
+
+## 4-set-up-testing-and-linting-tools
+
+### rubocop
+
+After adding the gems and running bundle install, generate the config and todo:
+```
+rubocop --auto-gen-config
+```
