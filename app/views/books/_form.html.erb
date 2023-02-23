@@ -11,27 +11,29 @@
     </div>
   <% end %>
 
-  <div>
+  <div class="mb-2">
     <%= form.label :title, style: "display: block" %>
     <%= form.text_field :title %>
   </div>
 
-  <div>
+  <div class="mb-2">
+    <%= form.label :author, style: "display: block" %>
+    <%= form.collection_select :author_id, Author.order(:name), :id, :name, prompt: true  %>
+  </div>
+
+  <div class="mb-2">
     <%= form.label :summary, style: "display: block" %>
     <%= form.text_area :summary %>
   </div>
 
-  <div>
+  <div class="mb-2">
     <%= form.label :publication_year, style: "display: block" %>
     <%= form.number_field :publication_year %>
   </div>
 
-  <div>
-    <%= form.label :author_id, style: "display: block" %>
-    <%= form.text_field :author_id %>
-  </div>
 
-  <div>
+
+  <div class="m-2">
     <%= form.submit %>
   </div>
 <% end %>

@@ -1,0 +1,44 @@
+<% book_user = nil %>
+
+<% if book_user %>
+
+  <div class="card m-3" id="book_user">
+
+    <div class="card-header text-right">
+
+      <h7><%= current_user.email.split("@").first %> </h7>
+      
+      <span class="px-2" id="liked">
+        <% if book_user.liked %>
+          <i class="fa fa-heart fa-lg" aria-hidden="true"></i>
+        <% else %>
+          <i class="fa fa-heart-o fa-lg" aria-hidden="true"></i>
+        <% end %>
+      </span>
+
+      <span>
+        <%= link_to '<button type="button" class="btn btn-sm btn-outline-secondary mr-2 my-sm-0">Edit</button>'.html_safe, edit_book_user_path(book_user) %>
+      </span>
+
+    </div>
+
+    <div class="card-body">
+
+      <h6 class="card-title">Status: <%= book_user.status.titleize %></h6>
+
+      <p></p>
+
+      <% if book_user.notes != nil && book_user.notes.length > 0 %>
+
+        <h6 class="card-title">Notes:</h6>
+
+        <p class="card-text">
+          <%= book_user.notes %>
+        </p>
+
+      <% end %>
+
+    </div>
+  </div>
+
+<% end %>

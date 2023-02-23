@@ -1,9 +1,17 @@
-<h1>New author</h1>
+<div class="card">
 
-<%= render "form", author: @author %>
+  <div class="card-body">
 
-<br>
+    <h3>New Author</h3>
 
-<div>
-  <%= link_to "Back to authors", authors_path %>
+    <%= render "form", author: @author %>
+
+    <br>
+
+    <div>
+      <%= link_to "Cancel", @author %>
+    </div>
+
+  </div>
+
 </div>

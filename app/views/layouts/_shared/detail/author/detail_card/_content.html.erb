@@ -1,0 +1,9 @@
+<div id="books">
+  <ul class="list-group" id="book_list">
+    <% author.books.each do |book| %>
+      
+      <%= render "layouts/_shared/list/book", { book: book } %>
+
+    <% end %>
+  <ul>
+</div>

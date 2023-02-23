@@ -1,0 +1,21 @@
+<li class="list-group-item">
+
+  <div class="row">
+
+    <div class="col-9 d-flex align-items-center" id="col.1">
+        
+        <%= render "layouts/_shared/list/author/thumbnail", author: author %>
+        
+        <%= render "layouts/_shared/list/author/heading", author: author %>
+
+    </div>
+
+    <div class="col-3 text-right" id="col.2">
+      
+      <%= render "layouts/_shared/list/author/author_users", { author: author } %>
+
+    </div>
+
+  </div>
+        
+</li>

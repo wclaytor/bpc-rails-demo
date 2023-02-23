@@ -1,0 +1,38 @@
+<% book_user = nil %>
+<% book_users = nil %>
+
+<span id="book_users">
+
+  <% if book_user == nil || book_user.liked != true %>
+
+    <span class="px-2" id="liked">
+      <i class="fa fa-heart-o" aria-hidden="true"></i>
+    </span>
+
+  <% else %>
+
+    <span class="px-2" id="liked">
+      <i class="fa fa-heart" aria-hidden="true"></i>
+    </span>
+
+  <% end %>
+
+  <% if book_users == nil %>
+
+    <span class="badge badge-primary badge-pill" id="badge">0</span>
+
+  <% else %>
+    <% liked_count = bookUser.where(:book_id => book.id, :liked => true).count %>
+    <span class="badge badge-secondary badge-pill" id="badge"><%= liked_count %></span>
+
+  <% end %>
+
+  <br>
+
+  <% if book_user != nil && book_user.status != "unknown" %>
+
+    <span class="badge badge-secondary badge-pill" id="badge"><%= book_user.status.titleize %></span>
+
+  <% end %>
+
+</span>

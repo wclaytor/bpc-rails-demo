@@ -1,0 +1,20 @@
+<li class="list-group-item">
+
+  <div class="row">
+
+    <div class="col-9 d-flex align-items-center" id="col.1">
+
+        <%= render "layouts/_shared/list/book/thumbnail", book: book %>
+        <%= render "layouts/_shared/list/book/heading", book: book %>
+  
+    </div>
+
+    <div class="col-3 text-right" id="col.2">
+      
+      <%= render "layouts/_shared/list/book/book_users", { book: book } %>
+    
+    </div>
+
+  </div>
+
+</li>
