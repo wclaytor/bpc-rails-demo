@@ -1,5 +1,3 @@
-class Author < ApplicationRecord
-
-    has_many :books # rubocop:todo Rails/HasManyOrHasOneDependent
-
+class Author < ApplicationRecord # rubocop:todo Style/Documentation
+  has_many :books
 end
