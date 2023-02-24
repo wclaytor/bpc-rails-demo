@@ -1,5 +1,74 @@
 # bpc-rails-demo
 
+## General
+
+### dokku
+
+#### add remote
+```
+git remote add dokku dokku@billclaytor.com:bpc-rails-demo
+```
+
+#### push
+```
+git push dokku main:master
+```
+
+
+#### rails console
+```
+dokku run bpc-rails-demo bundle exec rails c
+```
+
+#### tail logs
+```
+dokku logs bpc-rails-demo -t
+```
+
+###
+
+#### seed and migrate database
+```
+dokku run bpc-rails-demo bundle exec rake db:migrate db:seed RAILS_ENV=production
+```
+
+#### just migrate database
+```
+dokku run bpc-rails-demo bundle exec rake db:migrate RAILS_ENV=production
+```
+
+### books
+
+#### delete
+```
+# rails console
+Book.delete_all
+```
+
+#### destroy all!!!
+```
+# rails console
+Book.destroy_all
+ActiveRecord::Base.connection.reset_pk_sequence!('books')
+```
+
+### authors
+
+#### delete
+```
+# rails console
+Author.delete_all
+```
+
+#### destroy all!!!
+```
+# rails console
+Author.destroy_all
+ActiveRecord::Base.connection.reset_pk_sequence!('authors')
+```
+
+## Issue Notes
+
 ## 1-create-rails-project-and-deploy-to-dokku
 
 ### Rails
