@@ -64,6 +64,6 @@ class AuthorsController < ApplicationController # rubocop:todo Style/Documentati
 
   # Only allow a list of trusted parameters through.
   def author_params
-    params.require(:author).permit(:name, :bio)
+    params.require(:author).permit(:name, :bio, :image_path)
   end
 end

@@ -111,3 +111,25 @@ rails g scaffold Book title:string summary:text publication_year:integer author:
 ```
 rails db:migrate
 ```
+
+## 11-add-author-and-book-images-for-seed-data
+
+* Create the migrations
+```
+rails g migration AddImagePathToAuthor
+rails g migration AddImagePathToBook
+```
+
+* Destroy all records (rails console)
+
+Books
+```
+Book.destroy_all
+ActiveRecord::Base.connection.reset_pk_sequence!('books')
+```
+
+Authors
+```
+Author.destroy_all
+ActiveRecord::Base.connection.reset_pk_sequence!('authors')
+```

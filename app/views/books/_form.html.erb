@@ -13,7 +13,7 @@
 
   <div class="mb-2">
     <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
+    <%= form.text_field :title, size: "50" %>
   </div>
 
   <div class="mb-2">
@@ -22,16 +22,19 @@
   </div>
 
   <div class="mb-2">
-    <%= form.label :summary, style: "display: block" %>
-    <%= form.text_area :summary %>
+    <%= form.label :publication_year, style: "display: block" %>
+    <%= form.number_field :publication_year %>
+  </div> 
+
+  <div class="mb-2">
+    <%= form.label :image_path, style: "display: block" %>
+    <%= form.text_field :image_path, size: "50" %>
   </div>
 
   <div class="mb-2">
-    <%= form.label :publication_year, style: "display: block" %>
-    <%= form.number_field :publication_year %>
+    <%= form.label :summary, style: "display: block" %>
+    <%= form.text_area :summary, size: "50x5" %>
   </div>
-
-
 
   <div class="m-2">
     <%= form.submit %>

@@ -64,6 +64,6 @@ class BooksController < ApplicationController # rubocop:todo Style/Documentation
 
   # Only allow a list of trusted parameters through.
   def book_params
-    params.require(:book).permit(:title, :summary, :publication_year, :author_id)
+    params.require(:book).permit(:title, :summary, :publication_year, :image_path, :author_id)
   end
 end
