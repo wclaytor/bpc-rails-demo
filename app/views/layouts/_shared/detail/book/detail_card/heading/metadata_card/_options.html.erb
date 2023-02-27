@@ -2,7 +2,7 @@
 
   <ul class="nav">
 
-    <% if true %>
+    <% if current_user != nil && current_user.role == "admin" %>
 
       <li class="nav-item">
         <%= link_to '<button type="button" class="btn btn-sm btn-outline-secondary mr-2 my-sm-0">Edit</button>'.html_safe, edit_book_path(book) %>

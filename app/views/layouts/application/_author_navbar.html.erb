@@ -22,7 +22,7 @@
       <a class="nav-link active" href="#">Latest Authors</a>
     </li>
 
-    <% if true %>
+    <% if current_user != nil && current_user.role == "admin" %>
       <li class="nav-item">
         <a class="nav-link active" href="<%= new_author_path %>">New Author</a>
       </li>
