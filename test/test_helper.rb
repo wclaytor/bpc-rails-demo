@@ -15,4 +15,23 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
+
+  # ...
+
+  # Devise setup
+  include Devise::Test::IntegrationHelpers
+  include Warden::Test::Helpers
+
+  ################ added ################
+  setup do
+    # load sign in
+    get "/users/sign_in"
+
+    # use devise helper
+    sign_in( users(:one) )
+    post user_session_url
+  end
+
+  # ...
+
 end

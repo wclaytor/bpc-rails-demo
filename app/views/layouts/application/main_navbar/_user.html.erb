@@ -1,0 +1,9 @@
+<% if user_signed_in? %>
+
+  <small class="text-muted">
+    <a class="nav-link" href="/#"><%= current_user.email %> | <%= current_user.role %></a>
+  </small>
+
+  <%= button_to "Sign out", destroy_user_session_path, :method => :delete, :class => "btn btn btn-outline-success mr-2 my-sm-0" %>
+
+<% end %>

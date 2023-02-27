@@ -202,3 +202,10 @@ Authors
 Author.destroy_all
 ActiveRecord::Base.connection.reset_pk_sequence!('authors')
 ```
+
+## 15-enable-and-require-log-in
+
+### Install and configure Devise
+https://www.digitalocean.com/community/tutorials/how-to-set-up-user-authentication-with-devise-in-a-rails-7-application
+
+* add trackable
