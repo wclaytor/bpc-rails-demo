@@ -1,5 +1,5 @@
 ---
-name: Epic template
+name: Epic
 about: Template for creating epics
 title: "[EPIC]"
 labels: epic
