@@ -1,5 +1,4 @@
 module BooksHelper # rubocop:todo Style/Documentation
-
   def book_image_path(book)
     default_path = "book.png"
     path = book.image_path
@@ -9,5 +8,4 @@ module BooksHelper # rubocop:todo Style/Documentation
       default_path
     end
   end
-  
 end

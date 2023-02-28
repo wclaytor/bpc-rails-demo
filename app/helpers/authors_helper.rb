@@ -1,5 +1,4 @@
 module AuthorsHelper # rubocop:todo Style/Documentation
-
   def author_image_path(author)
     default_path = "author.png"
     path = author.image_path
@@ -9,5 +8,4 @@ module AuthorsHelper # rubocop:todo Style/Documentation
       default_path
     end
   end
-  
 end
