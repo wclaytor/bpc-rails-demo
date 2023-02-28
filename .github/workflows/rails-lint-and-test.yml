@@ -1,0 +1,59 @@
+name: Checks
+on: [push]
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Ruby and install gems
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+
+      - name: Run linters
+        run: |
+          bin/rubocop --parallel
+
+      - name: Run security checks
+        run: |
+          bin/bundler-audit
+          bin/brakeman -q -w2
+
+  test:
+    name: Test
+    runs-on: ubuntu-20.04
+    services:
+      postgres:
+        image: postgres:12.7
+        env:
+          POSTGRES_DB: bpc_rails_demo_test
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: password
+        ports: ["5432:5432"]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Ruby and install gems
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+
+      - name: Setup test database
+        env:
+          RAILS_ENV: test
+          PG_HOST: localhost
+          PG_DB: bpc_rails_demo_test
+          PG_USER: postgres
+          PG_PASSWORD: password
+          PG_PORT: 5432
+        run: |
+          bin/rails db:setup
+
+      - name: Run tests
+        run: bin/rails t

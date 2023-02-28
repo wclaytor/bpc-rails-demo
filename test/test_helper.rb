@@ -28,10 +28,9 @@ class ActiveSupport::TestCase
     get "/users/sign_in"
 
     # use devise helper
-    sign_in( users(:one) )
+    sign_in(users(:one))
     post user_session_url
   end
 
   # ...
-
 end

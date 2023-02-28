@@ -1,9 +1,13 @@
 module AuthorsHelper # rubocop:todo Style/Documentation
+
   def author_image_path(author)
-    if !author.image_path.nil? && author.image_path != ""
-      author.image_path
+    default_path = "author.png"
+    path = author.image_path
+    if !path.nil? && asset_exist?(path)
+      path
     else
-      "author.png"
+      default_path
     end
   end
+  
 end

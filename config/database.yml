@@ -16,7 +16,7 @@ development:
   database: bpc_rails_demo_development
 
   # Connect on a TCP socket
-  host: db
+  host: localhost
   username: postgres
   password: password
 
@@ -25,12 +25,11 @@ development:
 #################################################################
 test:
   <<: *default
-  database: bpc_rails_demo_test
-
-  # Connect on a TCP socket
-  host: db
-  username: postgres
-  password: password
+  database: <%= ENV.fetch('PG_DATABASE', 'bpc_rails_demo_test') %> 
+  host:     <%= ENV.fetch('PG_HOST',  'localhost') %>
+  username: <%= ENV.fetch('PG_USER', 'postgres') %>
+  password: <%= ENV.fetch('PG_PASSWORD', 'password') %>
+  port:     <%= ENV.fetch('PG_PORT', 5432) %>
 
 #################################################################
 # production

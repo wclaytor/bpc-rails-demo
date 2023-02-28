@@ -15,12 +15,24 @@ class BooksControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should create book" do
-    assert_difference("Book.count") do
-      post books_url, params: { book: { author_id: @book.author_id, publication_year: @book.publication_year, summary: @book.summary, title: @book.title } }
+  describe "create" do
+
+    describe "when all parameters are specified correctly" do
+      it "should create book" do
+        assert_difference("Book.count") do
+          post books_url, params: { book: { author_id: @book.author_id, publication_year: @book.publication_year, summary: @book.summary, title: @book.title } }
+        end
+
+        assert_redirected_to book_url(Book.last)
+      end
     end
 
-    assert_redirected_to book_url(Book.last)
+    describe "when all parameters are not specified correctly" do
+      it "should not create book" do
+        skip "not yet implemented"
+      end
+    end
+
   end
 
   test "should show book" do
@@ -33,16 +45,31 @@ class BooksControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should update book" do
-    patch book_url(@book), params: { book: { author_id: @book.author_id, publication_year: @book.publication_year, summary: @book.summary, title: @book.title } }
-    assert_redirected_to book_url(@book)
-  end
-
-  test "should destroy book" do
-    assert_difference("Book.count", -1) do
-      delete book_url(@book)
+  describe "update" do
+    
+    describe "when all parameters are specified correctly" do
+      test "should update book" do
+        patch book_url(@book), params: { book: { author_id: @book.author_id, publication_year: @book.publication_year, summary: @book.summary, title: @book.title } }
+        assert_redirected_to book_url(@book)
+      end
     end
 
-    assert_redirected_to books_url
+    describe "when all parameters are not specified correctly" do
+      it "should not update book" do
+        skip "not yet implemented"
+      end
+    end
+
   end
+
+  describe "destroy" do
+    it "should destroy book" do
+      assert_difference("Book.count", -1) do
+        delete book_url(@book)
+      end
+  
+      assert_redirected_to books_url
+    end
+  end
+
 end
