@@ -1,9 +1,11 @@
 module BooksHelper # rubocop:todo Style/Documentation
   def book_image_path(book)
-    if !book.image_path.nil? && book.image_path != ""
-      book.image_path
+    default_path = "book.png"
+    path = book.image_path
+    if !path.nil? && asset_exist?(path)
+      path
     else
-      "book.png"
+      default_path
     end
   end
 end

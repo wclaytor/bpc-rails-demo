@@ -209,3 +209,19 @@ ActiveRecord::Base.connection.reset_pk_sequence!('authors')
 https://www.digitalocean.com/community/tutorials/how-to-set-up-user-authentication-with-devise-in-a-rails-7-application
 
 * add trackable
+
+## 20-ensure-local-and-github-tests-and-linting-run-successfully
+
+* update rails
+had to remove gemfile lock
+
+* run github workflows locally
+https://github.com/nektos/act
+
+* update bundle for linux
+```
+bundle lock --add-platform x86_64-linux
+```
+
+* update workflow
+https://boringrails.com/articles/building-a-rails-ci-pipeline-with-github-actions/

@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby "3.1.2"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem "rails", "~> 7.0.3", ">= 7.0.3.1"
+gem "rails", "~> 7.0.4", ">= 7.0.4.2"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
@@ -57,6 +57,12 @@ group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
 
+  # https://github.com/presidentbeef/brakeman
+  gem 'brakeman'
+
+  # https://github.com/rubysec/bundler-audit
+  gem "bundler-audit"
+
   # https://github.com/rubocop/rubocop
   gem "rubocop", require: false
 
@@ -78,12 +84,6 @@ group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
 
-  # https://github.com/simplecov-ruby/simplecov
-  gem "simplecov", require: false
-
-  # https://github.com/metaskills/minitest-spec-rails
-  gem "minitest-spec-rails"
-
 end
 
 group :test do
@@ -91,4 +91,11 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
+
+  # https://github.com/simplecov-ruby/simplecov
+  gem "simplecov", require: false
+
+  # https://github.com/metaskills/minitest-spec-rails
+  gem "minitest-spec-rails"
+
 end

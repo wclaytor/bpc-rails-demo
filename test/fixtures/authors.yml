@@ -7,3 +7,7 @@ one:
 two:
   name: MyString2
   bio: MyText
+
+three:
+  name: MyString3
+  bio: MyText
