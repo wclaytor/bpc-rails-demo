@@ -16,9 +16,9 @@
 
 <body>
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light" id="main-navbar">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
 
-      <span class="navbar-brand">Developer Bookshelf</span>
+      <span class="navbar-brand" id="navbarBrand">Developer Bookshelf</span>
 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -28,15 +28,15 @@
 
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+            <a class="nav-link" id="navbarLinkHome" href="#">Home<span class="sr-only">(current)</span></a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="/authors">Authors</a>
+            <a class="nav-link" id="navbarLinkAuthors" href="/authors">Authors</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="/books">Books</a>
+            <a class="nav-link" id="navbarLinkBooks" href="/books">Books</a>
           </li>
 
         </ul>
@@ -45,9 +45,9 @@
 
   </nav>
 
-  <div class="jumbotron" id="header">
-    <h1 class="display-2 text-white">Developer Bookshelf</h1>
-    <h3 class=" text-white">A Ruby on Rails demo</h3>
+  <div class="jumbotron" id="jumbotron">
+    <h1 class="display-2 text-white" id="textJumbotronHeading">Developer Bookshelf</h1>
+    <h3 class=" text-white" id="textJumbotronSubHeading">A Ruby on Rails demo</h3>
   </div>
 
   <div class="container" id="content">
@@ -63,7 +63,7 @@
         </p>
 
         <p class="lead mb-4">
-          Sign up for a guest account to browse by <a href="/books">book title</a> or <a href="/authors">author name</a>.
+          Sign up for a guest account to browse by <a href="/books" id="browseBooks">book title</a> or <a href="/authors" id="browseAuthors">author name</a>.
           Request a user account via the project repo to create your own books and authors.
         </p>
 
@@ -72,11 +72,11 @@
         </p>
 
         <p class="lead mb-4">
-            Check out the project repo at <a href="https://github.com/wclaytor/bpc-rails-demo">Github</a>.
+            Check out the project repo at <a href="https://github.com/wclaytor/bpc-rails-demo" id="github">Github</a>.
         </p>
         
         <p class="lead mb-4">
-            See what new features are upcoming on the <a href="https://github.com/users/wclaytor/projects/4/views/1">Kanban board</a>.
+            See what new features are upcoming on the <a href="https://github.com/users/wclaytor/projects/4/views/1" id="kanban">Kanban board</a>.
         </p>
 
       </div>
@@ -94,7 +94,7 @@
         <br><br><br>
       
         <small id="header-photo-credit">
-          <a href="https://www.pexels.com/photo/selective-focus-photography-of-brown-wooden-book-shelf-2952871/" title="photo">Photo by Engin Akyurt</a>
+          <a href="https://www.pexels.com/photo/selective-focus-photography-of-brown-wooden-book-shelf-2952871/" title="photo credit" id="photoCredit">Photo by Engin Akyurt</a>
         </small>
       
       </div>
