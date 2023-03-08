@@ -1,7 +1,10 @@
 ---
 name: User Story
 about: Template for creating user stories
-title: "[User-Story]"
+title: "[User-Story] "
+labels: 'user-story'
+assignees: ''
+
 ---
 
 ## Rationale ##
